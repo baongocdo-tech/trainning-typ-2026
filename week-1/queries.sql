@@ -3,7 +3,7 @@
 -- TẠO BẢNG LƯU THÔNG TIN CÁC CUỐN SÁCH
 CREATE TABLE authors (
   au_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  au_name VARCHAR(50)
+  author VARCHAR(50)
 );
 
 CREATE TABLE categories (
@@ -31,7 +31,7 @@ CREATE TABLE books (
 
 -- THÊM DỮ LIỆU VÀO CÁC BẢNG
 -- Thêm tác giả
-INSERT INTO authors (au_name) VALUES 
+INSERT INTO authors (author) VALUES 
 ('Nguyễn Nhật Ánh'),
 ('J.K. Rowling'),
 ('Dan Brown'),
@@ -72,3 +72,14 @@ INSERT INTO books (title, au_id, cat_id, pub_id, pub_year) VALUES
 ('Đắc Nhân Tâm', 6, 6, 5, 2016),
 ('Clean Code: Mã Sạch', 7, 7, 6, 2015);
 
+-- CẬP NHẬT TÊN MỘT CUỐN SÁCH 
+UPDATE books SET title = 'Ticket to Childhood'
+  WHERE title = 'Cho Tôi Xin Một Vé Đi Tuổi Thơ';
+
+/* Khi INSERT cuốn sách A với id = 11, rồi lại xoá cuốn sách đó đi, thêm một cuốn sách B thì cuốn sách B sẽ có id = 12 thay vì 11 */
+
+-- HIỂN THỊ TOÀN BỘ CÁC CUỐN SÁCH VÀ THÔNG TIN CỦA CHÚNG...
+SELECT book_id, title, author, category, publisher, pub_year FROM books 
+  INNER JOIN authors ON books.au_id = authors.au_id
+  INNER JOIN categories ON books.cat_id = categories.cat_id
+  INNER JOIN publishers ON books.pub_id = publishers.pub_id;
