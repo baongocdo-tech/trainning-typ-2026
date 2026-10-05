@@ -18,7 +18,7 @@ CREATE TABLE publishers (
 
 CREATE TABLE books (
   book_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
-  book_name VARCHAR(225),
+  title VARCHAR(225),
   au_id INT,
   cat_id INT,
   pub_id INT,
