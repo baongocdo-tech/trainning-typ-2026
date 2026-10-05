@@ -28,3 +28,47 @@ CREATE TABLE books (
   FOREIGN KEY (pub_id) REFERENCES publishers(pub_id)
 );
 
+
+-- THÊM DỮ LIỆU VÀO CÁC BẢNG
+-- Thêm tác giả
+INSERT INTO authors (au_name) VALUES 
+('Nguyễn Nhật Ánh'),
+('J.K. Rowling'),
+('Dan Brown'),
+('Yuval Noah Harari'),
+('Paulo Coelho'),
+('Dale Carnegie'),
+('Robert C. Martin');
+
+-- Thêm chủ đề
+INSERT INTO categories (category) VALUES 
+('Văn học'),
+('Giả tưởng'),
+('Trinh thám'),
+('Khoa học'),
+('Triết lý'),
+('Kỹ năng sống'),
+('Công nghệ thông tin');
+
+-- Thêm nhà xuất bản
+INSERT INTO publishers (publisher) VALUES 
+('NXB Trẻ'),
+('NXB Hội Nhà Văn'),
+('NXB Thế Giới'),
+('NXB Văn Học'),
+('NXB Tổng Hợp TP.HCM'),
+('NXB Lao Động');
+
+-- Thêm sách
+INSERT INTO books (title, au_id, cat_id, pub_id, pub_year) VALUES 
+('Mắt Biếc', 1, 1, 1, 2019),
+('Cho Tôi Xin Một Vé Đi Tuổi Thơ', 1, 1, 1, 2008),
+('Harry Potter và Hòn Đá Phù Thủy', 2, 2, 1, 2020),
+('Harry Potter và Phòng Chứa Bí Mật', 2, 2, 1, 2020),
+('Mật Mã Da Vinci', 3, 3, 2, 2017),
+('Hỏa Ngục', 3, 3, 2, 2013),
+('Sược Gốc: Lược Sử Loài Người', 4, 4, 3, 2017),
+('Nhà Giả Kim', 5, 5, 4, 2020),
+('Đắc Nhân Tâm', 6, 6, 5, 2016),
+('Clean Code: Mã Sạch', 7, 7, 6, 2015);
+
