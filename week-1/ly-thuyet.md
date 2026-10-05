@@ -14,7 +14,7 @@
 - Aggregate functions: COUNT, SUM, AVG, MIN, MAX -->
 
 - **Bài toán**: Xây dựng cơ sở dữ liệu quản lí sách trong một thư viện, bao gồm: tên sách, tác giả, chủ đề/phân loại, nhà xuất bản, năm xuất bản.
->> [Bài làm.](https://github.com/baongocdo-tech/trainning-typ-2026/blob/week-1/week-1/queries.sql)
+> [Link.](https://github.com/baongocdo-tech/trainning-typ-2026/blob/week-1/week-1/queries.sql)
 <!-- Các bảng bao gồm 
 - BOOK: BookID, BookName, AuID, CatID, PubID, PubYear.
 - AUTHOR: AuID, AuName.
