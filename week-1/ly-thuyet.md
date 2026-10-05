@@ -13,7 +13,7 @@
 - Query: WHERE, JOIN (INNER, LEFT, RIGHT), GROUP BY, HAVING, ORDER BY
 - Aggregate functions: COUNT, SUM, AVG, MIN, MAX -->
 
-- Bài toán: Xây dựng cơ sở dữ liệu quản lí sách trong một thư viện, bao gồm: tên sách, tác giả, chủ đề/phân loại, nhà xuất bản, năm xuất bản.
+- **Bài toán**: Xây dựng cơ sở dữ liệu quản lí sách trong một thư viện, bao gồm: tên sách, tác giả, chủ đề/phân loại, nhà xuất bản, năm xuất bản.
 
 
 
@@ -77,21 +77,29 @@
 
 <!-- - Demo: chạy 2 transaction đồng thời để thấy lock hoạt động -->
 
-<!-- ### 6. Transaction
-- Transaction là gì?
-- Khi nào cần gom nhiều thao tác vào 1 transaction?
-- COMMIT, ROLLBACK
-- Ví dụ: chuyển tiền — trừ tài khoản A + cộng tài khoản B phải thành công cùng nhau, fail thì rollback cả hai
+### 6. Transaction
+**Transaction**: 
+- Tập hợp các câu lệnh SQL thực hiện một nhóm thao tác thay đổi dữ liệu liên tiếp.
+- 4 tính chất **ACID**: Atomicity, Consistency, Isolation (cô lập), Durability.
+
+**Gom nhiều thao tác vào 1 transaction**: Khi một nghiệp vụ thực tế gồm _nhiều bước nhỏ phụ thuộc lẫn nhau_. Nếu một bước bất kỳ bị lỗi, toàn bộ các bước trước đó phải được huỷ bỏ để tránh tình trạng dữ liệu bị sai lệch (dữ liệu nữa vời).
+
+Các lệnh điều khiển Transaction:
+- `START TRANSACTION` / `BEGIN`: Bắt đầu.
+- `COMMIT`: Lưu vĩnh viễn vào DB.
+- `ROLLBACK`: Huỷ bỏ toàn bộ thay đổi từ lúc bắt đầu nếu có lỗi xảy ra.
+
+  _Ví dụ_: chuyển tiền — trừ tài khoản A + cộng tài khoản B phải thành công cùng nhau, fail thì rollback cả hai
 
 ---
 
-## Phần 2: OOP
+<!-- ## Phần 2: OOP
 
 ### 1. OOP trong Java
 - Các tính chất: Encapsulation, Inheritance, Polymorphism, Abstraction
 - Class, Abstract Class, Interface — khi nào dùng cái nào?
 
-### 2. Dependency Injection (DI) & Inversion of Control (IoC)
+<!-- ### 2. Dependency Injection (DI) & Inversion of Control (IoC)
 - Khái niệm, ví dụ bằng Java thuần (không dùng framework)
 - Tại sao DI giúp code dễ test, dễ thay đổi?
 - Tìm hiểu thêm: DI/IoC được ứng dụng thế nào trong Spring
