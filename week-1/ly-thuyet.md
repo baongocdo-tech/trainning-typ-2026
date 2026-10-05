@@ -15,6 +15,12 @@
 
 - **Bài toán**: Xây dựng cơ sở dữ liệu quản lí sách trong một thư viện, bao gồm: tên sách, tác giả, chủ đề/phân loại, nhà xuất bản, năm xuất bản.
 
+<!-- Các bảng bao gồm 
+- BOOK: BookID, BookName, AuID, CatID, PubID, PubYear.
+- AUTHOR: AuID, AuName.
+- CATEGORY: CatID, Category.
+- PUBLISHER: PubID, Publisher.
+-->
 
 
 ### 3. Index
